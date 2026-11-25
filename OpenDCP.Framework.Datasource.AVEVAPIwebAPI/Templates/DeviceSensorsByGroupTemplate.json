@@ -1,0 +1,18 @@
+{
+  "0": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}elements/{{DEVICEWEBID}}/elements?nameFilter={{SENSORFILTERCONDITION}}&selectedFields=Items.Name;Items.Links.Attributes&webIdType=IDOnly"
+  },
+  "1": {
+    "Method": "GET",
+    "RequestTemplate": {
+      "Resource": "{0}?maxcount=4000&selectedFields=Items.WebId;Items.Name;Items.Description;Items.Type;Items.Step;Items.DefaultUnitsNameAbbreviation;Items.DefaultUnitsName;Items.IsConfigurationItem;Items.HasChildren;Items.Links.Element;Items.CategoryNames;&webIdType=IDOnly"
+    },
+    "Parameters": [
+      "$.0.Content.Items[*].Links.Attributes"
+    ],
+    "ParentIds": [
+      "0"
+    ]
+  }
+}

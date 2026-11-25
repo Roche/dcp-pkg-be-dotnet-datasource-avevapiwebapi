@@ -1,0 +1,18 @@
+{
+  "0": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}assetservers/{{ASSETSERVERWEBID}}/unitclasses?selectedFields=Items.Links.Units;Items.Name"
+  },
+  "1": {
+    "Method": "GET",
+    "RequestTemplate": {
+      "Resource": "{0}?selectedFields=Items.Name;Items.Abbreviation"
+    },
+    "Parameters": [
+      "$.0.Content.Items[*].Links.Units"
+    ],
+    "ParentIds": [
+      "0"
+    ]
+  }
+}

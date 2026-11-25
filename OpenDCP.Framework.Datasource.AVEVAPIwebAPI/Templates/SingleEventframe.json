@@ -1,0 +1,10 @@
+{
+  "0": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}streamsets/{{EVENTFRAMEWEBID}}/value?selectedFields=Items.Name;Items.Value.Value;Items.Value.Good&webIdType=IDonly"
+  },
+  "1": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}eventframes/{{EVENTFRAMEWEBID}}?selectedFields=Name;StartTime;EndTime;Id;RefElementWebIds;Links.Parent&webIdType=IDonly"
+  }
+}

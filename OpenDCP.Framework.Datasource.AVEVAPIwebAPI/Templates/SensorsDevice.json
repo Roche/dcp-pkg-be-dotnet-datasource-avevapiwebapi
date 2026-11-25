@@ -1,0 +1,25 @@
+﻿{
+  "0a": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}elements/multiple?webId={{DEVICEWEBIDS}}&selectedFields=Items.Identifier;Items.Object.Links.Parent&webIdType=IDOnly"
+  },
+  "0": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}elements/multiple?webId={{DEVICEWEBIDS}}&selectedFields=Items.Identifier;Items.Object.Links.Parent&webIdType=IDOnly",
+    "ParentIds": [
+      "0a"
+    ]
+  },
+  "1": {
+    "Method": "GET",
+    "RequestTemplate": {
+      "Resource": "{0}?selectedFields=Name;WebId;Path;Description;CategoryNames&webIdType=IDOnly"
+    },
+    "Parameters": [
+      "$.0.Content.Items[*].Object.Links.Parent"
+    ],
+    "ParentIds": [
+      "0"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "0": {
+    "Resource": "{{BASEURL}}streamsets/plot?selectedFields=Items.Name;Items.WebId;Items.Items.UnitsAbbreviation;Items.UnitsAbbreviation;Items.Items.Value;Items.Items.Timestamp;Items.Items.Good&webid={{SENSORWEBID}}&startTime={{STARTTIME}}&endTime={{ENDTIME}}&interval={{INTERVALS}}&webIdType=IDOnly",
+    "Method": "GET"
+  },
+  "1": {
+    "Resource": "{{BASEURL}}elements/multiple?selectedFields=Items.Object.Links.EventFrames;Items.Identifier&webid={{DEVICEWEBID}}&webIdType=IDOnly",
+    "Method": "GET"
+  },
+  "2": {
+    "Resource": "{{BASEURL}}elements/multiple?selectedFields=Items.Object.Links.EventFrames;Items.Identifier&webid={{DEVICEWEBID}}&webIdType=IDOnly",
+    "Method": "GET",
+    "ParentIds": [
+      "1"
+    ]
+  },
+  "3": {
+    "Method": "GET",
+    "RequestTemplate": {
+      "Resource": "{0}?starttime={{STARTTIME}}&endtime={{ENDTIME}}&selectedFields=Items.StartTime;Items.EndTime;Items.Id;Items.RefElementWebIds&webIdType=IDOnly"
+    },
+    "Parameters": [
+      "$.2.Content.Items[*].Object.Links.EventFrames"
+    ],
+    "ParentIds": [
+      "2"
+    ]
+  }
+}

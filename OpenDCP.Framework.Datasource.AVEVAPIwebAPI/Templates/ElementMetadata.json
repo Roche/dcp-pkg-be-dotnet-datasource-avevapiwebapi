@@ -1,0 +1,18 @@
+{
+  "0": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}elements/{{ELEMENTWEBID}}/attributes?selectedFields=Items.Name;Items.CategoryNames;Items.IsConfigurationItem;Items.Description;Items.Links.Value&webIdType=IDOnly"
+  },
+  "1": {
+    "Method": "GET",
+    "RequestTemplate": {
+      "Resource": "{0}?selectedFields=Value;Good&webIdType=IDOnly"
+    },
+    "Parameters": [
+      "$.0.Content.Items[*].Links.Value"
+    ],
+    "ParentIds": [
+      "0"
+    ]
+  }
+}

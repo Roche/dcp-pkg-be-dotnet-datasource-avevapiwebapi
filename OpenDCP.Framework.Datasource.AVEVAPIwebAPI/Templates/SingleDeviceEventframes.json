@@ -1,0 +1,18 @@
+{
+  "0": {
+    "Method": "GET",
+    "Resource": "{{BASEURL}}elements/{{DEVICEWEBID}}/eventframes?starttime={{STARTTIME}}&endtime={{ENDTIME}}&searchMode={{SEARCHMODE}}&selectedFields=Items.WebId;Items.StartTime;Items.Links.Template;Items.Links.Parent;Items.EndTime;Items.Links.Value;Items.Name;Items.HasChildren;Items.Id&categoryName=DC_Asset&webIdType=IDOnly&maxCount=3000"
+  },
+  "1": {
+    "Method": "GET",
+    "RequestTemplate": {
+      "Resource": "{0}?selectedFields=Items.Value.Value;Items.Name;Items.Value.Good&webIdType=IDOnly"
+    },
+    "Parameters": [
+      "$.0.Content.Items[*].Links.Value"
+    ],
+    "ParentIds": [
+      "0"
+    ]
+  }
+}
